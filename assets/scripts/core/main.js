@@ -40,8 +40,9 @@ if (window.gameCache) {
 }
 const phaserConfig = {
   type: Phaser.AUTO,
-  width: screenWidth,
-  height: screenHeight,
+  // Use window dimensions
+  width: window.innerWidth, 
+  height: window.innerHeight,
   resolution: 1,
   fps: {
     smoothStep: true
@@ -55,7 +56,7 @@ const phaserConfig = {
     powerPreference: "default"
   },
   scale: {
-    mode: Phaser.Scale.FIT,
+    mode: Phaser.Scale.RESIZE, // RESIZE instead of FIT
     autoCenter: Phaser.Scale.CENTER_BOTH
   },
   scene: [BootScene, GameScene]
